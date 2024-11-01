@@ -1,0 +1,24 @@
+[versions]
+kotlinJvm = "2.0.10-139"
+kotlinArrow = "1.1.3"
+kotlinCoroutines = "1.9.0"
+springBoot = "3.3.4"
+springDependencyManagement = "1.1.6"
+kotestExtensions = "1.3.0"
+kotestRunner = "5.9.1"
+
+[libraries]
+# Libraries provided by Kotlin Gradle plugin and Spring Boot Dependencies
+springBootStarter = { module = "org.springframework.boot:spring-boot-starter" }
+springBootStarterTest = { module = "org.springframework.boot:spring-boot-starter-test" }
+springBootDevtools = { module = "org.springframework.boot:spring-boot-devtools" }
+springBootStarterMongoDb = { module = "org.springframework.boot:spring-boot-starter-data-mongodb" }
+kotlinReflect = { module = "org.jetbrains.kotlin:kotlin-reflect" }
+
+# Libraries provided manually
+kotlinCoroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinCoroutines" }
+kotlinArrow = { module = "io.arrow-kt:arrow-core", version.ref = "kotlinArrow" }
+
+[plugins]
+springBootPlugin = { id = "org.springframework.boot", version.ref = "springBoot" }
+springDependencyManagement = { id = "io.spring.dependency-management", version.ref = "springDependencyManagement" }

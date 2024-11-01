@@ -1,8 +1,13 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
 plugins {
-    kotlin("jvm") version "1.9.22"
+    kotlin("jvm") version "1.9.25"
+    kotlin("plugin.spring") version "1.9.25"
+    alias(libs.plugins.springBootPlugin)
+    alias(libs.plugins.springDependencyManagement) 
 }
 
-group = "cz.jdr.poc"
+group = "cz.jdr.poc.spring"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -10,12 +15,23 @@ repositories {
 }
 
 dependencies {
-    testImplementation("org.jetbrains.kotlin:kotlin-test")
+    implementation(platform(SpringBootPlugin.BOM_COORDINATES))
+    implementation(libs.springBootStarter)
+    implementation(libs.springBootDevtools)
+    implementation(libs.springBootStarterMongoDb)
+
+    implementation(libs.kotlinReflect)
+    implementation(libs.kotlinCoroutines)
+    implementation(libs.kotlinArrow)
+    
+    testImplementation(libs.springBootStarterTest)
+    
 }
 
 tasks.test {
     useJUnitPlatform()
 }
+
 kotlin {
     jvmToolchain(21)
 }
