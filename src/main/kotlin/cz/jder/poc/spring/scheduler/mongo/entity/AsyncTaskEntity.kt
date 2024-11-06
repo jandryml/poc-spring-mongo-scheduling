@@ -21,10 +21,10 @@ sealed class BatchAsyncTaskEntity : AsyncTaskEntity() {
     lateinit var to: Instant
 }
 
-@TypeAlias("ConseqFundPricesImportAsyncTask")
-class ConseqFundPricesImportAsyncTaskEntity : BatchAsyncTaskEntity()
+@TypeAlias("ApiImportAsyncTask")
+class ActiveImportAsyncTaskEntity : BatchAsyncTaskEntity()
 
-@TypeAlias("ManualBalancesImportAsyncTask")
-class ManualBalancesImportAsyncTaskEntity(
+@TypeAlias("ManualImportAsyncTask")
+class ManualImportAsyncTaskEntity(
     val metadataId: String
 ) : AsyncTaskEntity()

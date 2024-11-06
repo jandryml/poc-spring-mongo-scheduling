@@ -1,11 +1,11 @@
 package cz.jder.poc.spring.scheduler.mongo.service
 
 import cz.jder.poc.spring.scheduler.mongo.domain.AsyncTask
-import cz.jder.poc.spring.scheduler.mongo.domain.ConseqFundPricesImportAsyncTask
-import cz.jder.poc.spring.scheduler.mongo.domain.ManualBalancesImportAsyncTask
+import cz.jder.poc.spring.scheduler.mongo.domain.ApiImportAsyncTask
+import cz.jder.poc.spring.scheduler.mongo.domain.ManualImportAsyncTask
 import cz.jder.poc.spring.scheduler.mongo.entity.AsyncTaskEntity
-import cz.jder.poc.spring.scheduler.mongo.entity.ConseqFundPricesImportAsyncTaskEntity
-import cz.jder.poc.spring.scheduler.mongo.entity.ManualBalancesImportAsyncTaskEntity
+import cz.jder.poc.spring.scheduler.mongo.entity.ActiveImportAsyncTaskEntity
+import cz.jder.poc.spring.scheduler.mongo.entity.ManualImportAsyncTaskEntity
 import cz.jder.poc.spring.scheduler.mongo.repository.TaskRepo
 import org.springframework.stereotype.Service
 
@@ -24,13 +24,13 @@ class TaskService(
 
     fun mapToDomain(taskEntity: AsyncTaskEntity): AsyncTask {
         return when (taskEntity) {
-            is ManualBalancesImportAsyncTaskEntity -> mapToManualTask(taskEntity)
-            is ConseqFundPricesImportAsyncTaskEntity -> mapToConseqTask(taskEntity)
+            is ManualImportAsyncTaskEntity -> mapToManualTask(taskEntity)
+            is ActiveImportAsyncTaskEntity -> mapToApiTask(taskEntity)
         }
     }
 
-    fun mapToManualTask(taskEntity: ManualBalancesImportAsyncTaskEntity): ManualBalancesImportAsyncTask {
-        return ManualBalancesImportAsyncTask(
+    fun mapToManualTask(taskEntity: ManualImportAsyncTaskEntity): ManualImportAsyncTask {
+        return ManualImportAsyncTask(
             metadataId = taskEntity.metadataId,
             state = taskEntity.state,
             executionStart = taskEntity.executionStart,
@@ -40,8 +40,8 @@ class TaskService(
         )
     }
 
-    fun mapToConseqTask(taskEntity: ConseqFundPricesImportAsyncTaskEntity): ConseqFundPricesImportAsyncTask {
-        return ConseqFundPricesImportAsyncTask(
+    fun mapToApiTask(taskEntity: ActiveImportAsyncTaskEntity): ApiImportAsyncTask {
+        return ApiImportAsyncTask(
             state = taskEntity.state,
             executionStart = taskEntity.executionStart,
             executionEnd = taskEntity.executionEnd,

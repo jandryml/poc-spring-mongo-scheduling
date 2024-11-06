@@ -2,7 +2,7 @@ package cz.jder.poc.spring.scheduler.mongo.domain
 
 import java.time.Instant
 
-class ManualBalancesImportAsyncTask(
+class ManualImportAsyncTask(
     val metadataId: String,
     state: String,
     executionStart: Instant,

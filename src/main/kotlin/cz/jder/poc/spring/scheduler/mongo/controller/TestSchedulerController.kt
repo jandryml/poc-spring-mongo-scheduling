@@ -1,12 +1,10 @@
 package cz.jder.poc.spring.scheduler.mongo.controller
 
 import cz.jder.poc.spring.scheduler.mongo.domain.AsyncTask
-import cz.jder.poc.spring.scheduler.mongo.domain.ConseqFundPricesImportAsyncTask
-import cz.jder.poc.spring.scheduler.mongo.domain.ManualBalancesImportAsyncTask
-import cz.jder.poc.spring.scheduler.mongo.entity.AsyncTaskEntity
-import cz.jder.poc.spring.scheduler.mongo.entity.ConseqFundPricesImportAsyncTaskEntity
-import cz.jder.poc.spring.scheduler.mongo.entity.ManualBalancesImportAsyncTaskEntity
-import cz.jder.poc.spring.scheduler.mongo.repository.TaskRepo
+import cz.jder.poc.spring.scheduler.mongo.domain.ApiImportAsyncTask
+import cz.jder.poc.spring.scheduler.mongo.domain.ManualImportAsyncTask
+import cz.jder.poc.spring.scheduler.mongo.entity.ActiveImportAsyncTaskEntity
+import cz.jder.poc.spring.scheduler.mongo.entity.ManualImportAsyncTaskEntity
 import cz.jder.poc.spring.scheduler.mongo.service.TaskService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -25,14 +23,14 @@ class TestSchedulerController(
 
     @GetMapping("/addEntity")
     fun addEntities() {
-        val task1 = ManualBalancesImportAsyncTaskEntity("test").apply {
+        val task1 = ManualImportAsyncTaskEntity("test").apply {
             state = "test"
             executionStart = java.time.Instant.now()
             executionEnd = java.time.Instant.now()
             expiresOn = java.time.Instant.now().plusSeconds(60)
         }
 
-        val task2 = ConseqFundPricesImportAsyncTaskEntity().apply {
+        val task2 = ActiveImportAsyncTaskEntity().apply {
             state = "test2"
             executionStart = java.time.Instant.now()
             executionEnd = java.time.Instant.now()
@@ -49,8 +47,8 @@ class TestSchedulerController(
         val result = taskService.getTasks()
         result.forEach { 
             when(it) {
-                is ManualBalancesImportAsyncTask -> println("ManualBalancesImportAsyncTaskEntity: ${it.id}")
-                is ConseqFundPricesImportAsyncTask -> println("ConseqFundPricesImportAsyncTaskEntity: ${it.id}")
+                is ManualImportAsyncTask -> println("ManualImportAsyncTask: ${it.id}")
+                is ApiImportAsyncTask -> println("ApiImportAsyncTaskEntity: ${it.id}")
             }
         }
         return result

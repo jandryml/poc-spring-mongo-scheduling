@@ -2,7 +2,7 @@ package cz.jder.poc.spring.scheduler.mongo.domain
 
 import java.time.Instant
 
-class ConseqFundPricesImportAsyncTask(
+class ApiImportAsyncTask(
     state: String,
     executionStart: Instant,
     executionEnd: Instant,
