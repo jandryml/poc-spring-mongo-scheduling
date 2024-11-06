@@ -1,4 +1,4 @@
-package cz.jder.poc.spring.scheduler.mongo.entity
+package cz.jdr.poc.spring.scheduler.mongo.entity
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Field

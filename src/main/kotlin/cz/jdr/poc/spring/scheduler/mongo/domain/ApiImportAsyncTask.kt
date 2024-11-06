@@ -1,4 +1,4 @@
-package cz.jder.poc.spring.scheduler.mongo.domain
+package cz.jdr.poc.spring.scheduler.mongo.domain
 
 import java.time.Instant
 

@@ -1,7 +1,7 @@
-package cz.jder.poc.spring.scheduler.mongo.repository
+package cz.jdr.poc.spring.scheduler.mongo.repository
 
-import cz.jder.poc.spring.scheduler.mongo.entity.IEntity
-import cz.jder.poc.spring.scheduler.mongo.entity.IOperationsAllowedMongoDbObject
+import cz.jdr.poc.spring.scheduler.mongo.entity.IEntity
+import cz.jdr.poc.spring.scheduler.mongo.entity.IOperationsAllowedMongoDbObject
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageImpl
 import org.springframework.data.domain.Pageable

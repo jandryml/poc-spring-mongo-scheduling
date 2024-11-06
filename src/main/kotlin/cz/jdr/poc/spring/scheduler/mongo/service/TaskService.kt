@@ -1,12 +1,12 @@
-package cz.jder.poc.spring.scheduler.mongo.service
+package cz.jdr.poc.spring.scheduler.mongo.service
 
-import cz.jder.poc.spring.scheduler.mongo.domain.AsyncTask
-import cz.jder.poc.spring.scheduler.mongo.domain.ApiImportAsyncTask
-import cz.jder.poc.spring.scheduler.mongo.domain.ManualImportAsyncTask
-import cz.jder.poc.spring.scheduler.mongo.entity.AsyncTaskEntity
-import cz.jder.poc.spring.scheduler.mongo.entity.ActiveImportAsyncTaskEntity
-import cz.jder.poc.spring.scheduler.mongo.entity.ManualImportAsyncTaskEntity
-import cz.jder.poc.spring.scheduler.mongo.repository.TaskRepo
+import cz.jdr.poc.spring.scheduler.mongo.domain.AsyncTask
+import cz.jdr.poc.spring.scheduler.mongo.domain.ApiImportAsyncTask
+import cz.jdr.poc.spring.scheduler.mongo.domain.ManualImportAsyncTask
+import cz.jdr.poc.spring.scheduler.mongo.entity.AsyncTaskEntity
+import cz.jdr.poc.spring.scheduler.mongo.entity.ActiveImportAsyncTaskEntity
+import cz.jdr.poc.spring.scheduler.mongo.entity.ManualImportAsyncTaskEntity
+import cz.jdr.poc.spring.scheduler.mongo.repository.TaskRepo
 import org.springframework.stereotype.Service
 
 @Service

@@ -1,11 +1,11 @@
-package cz.jder.poc.spring.scheduler.mongo.controller
+package cz.jdr.poc.spring.scheduler.mongo.controller
 
-import cz.jder.poc.spring.scheduler.mongo.domain.AsyncTask
-import cz.jder.poc.spring.scheduler.mongo.domain.ApiImportAsyncTask
-import cz.jder.poc.spring.scheduler.mongo.domain.ManualImportAsyncTask
-import cz.jder.poc.spring.scheduler.mongo.entity.ActiveImportAsyncTaskEntity
-import cz.jder.poc.spring.scheduler.mongo.entity.ManualImportAsyncTaskEntity
-import cz.jder.poc.spring.scheduler.mongo.service.TaskService
+import cz.jdr.poc.spring.scheduler.mongo.domain.AsyncTask
+import cz.jdr.poc.spring.scheduler.mongo.domain.ApiImportAsyncTask
+import cz.jdr.poc.spring.scheduler.mongo.domain.ManualImportAsyncTask
+import cz.jdr.poc.spring.scheduler.mongo.entity.ActiveImportAsyncTaskEntity
+import cz.jdr.poc.spring.scheduler.mongo.entity.ManualImportAsyncTaskEntity
+import cz.jdr.poc.spring.scheduler.mongo.service.TaskService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController

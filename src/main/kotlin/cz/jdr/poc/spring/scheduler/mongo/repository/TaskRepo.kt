@@ -1,6 +1,6 @@
-package cz.jder.poc.spring.scheduler.mongo.repository
+package cz.jdr.poc.spring.scheduler.mongo.repository
 
-import cz.jder.poc.spring.scheduler.mongo.entity.AsyncTaskEntity
+import cz.jdr.poc.spring.scheduler.mongo.entity.AsyncTaskEntity
 import org.springframework.data.mongodb.core.MongoTemplate
 import org.springframework.stereotype.Component
 

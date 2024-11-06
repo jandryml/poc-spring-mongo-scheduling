@@ -1,4 +1,4 @@
-package cz.jder.poc.spring.scheduler.mongo
+package cz.jdr.poc.spring.scheduler.mongo
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
