@@ -1,5 +1,8 @@
 package cz.jder.poc.spring.scheduler.mongo.controller
 
+import cz.jder.poc.spring.scheduler.mongo.domain.AsyncTask
+import cz.jder.poc.spring.scheduler.mongo.domain.ConseqFundPricesImportAsyncTask
+import cz.jder.poc.spring.scheduler.mongo.domain.ManualBalancesImportAsyncTask
 import cz.jder.poc.spring.scheduler.mongo.entity.AsyncTaskEntity
 import cz.jder.poc.spring.scheduler.mongo.entity.ConseqFundPricesImportAsyncTaskEntity
 import cz.jder.poc.spring.scheduler.mongo.entity.ManualBalancesImportAsyncTaskEntity
@@ -42,7 +45,14 @@ class TestSchedulerController(
     }
 
     @GetMapping("/getEntity")
-    fun getEntities(): List<AsyncTaskEntity> {
-        return taskService.getTasks()
+    fun getEntities(): List<AsyncTask> {
+        val result = taskService.getTasks()
+        result.forEach { 
+            when(it) {
+                is ManualBalancesImportAsyncTask -> println("ManualBalancesImportAsyncTaskEntity: ${it.id}")
+                is ConseqFundPricesImportAsyncTask -> println("ConseqFundPricesImportAsyncTaskEntity: ${it.id}")
+            }
+        }
+        return result
     }
 }
