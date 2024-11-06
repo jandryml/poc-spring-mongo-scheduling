@@ -17,6 +17,7 @@ repositories {
 dependencies {
     implementation(platform(SpringBootPlugin.BOM_COORDINATES))
     implementation(libs.springBootStarter)
+    implementation(libs.springBootStarterWeb)
     implementation(libs.springBootDevtools)
     implementation(libs.springBootStarterMongoDb)
 

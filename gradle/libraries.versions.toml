@@ -10,6 +10,7 @@ kotestRunner = "5.9.1"
 [libraries]
 # Libraries provided by Kotlin Gradle plugin and Spring Boot Dependencies
 springBootStarter = { module = "org.springframework.boot:spring-boot-starter" }
+springBootStarterWeb = { module = "org.springframework.boot:spring-boot-starter-web" }
 springBootStarterTest = { module = "org.springframework.boot:spring-boot-starter-test" }
 springBootDevtools = { module = "org.springframework.boot:spring-boot-devtools" }
 springBootStarterMongoDb = { module = "org.springframework.boot:spring-boot-starter-data-mongodb" }
